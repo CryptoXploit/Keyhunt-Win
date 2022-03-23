@@ -1,6 +1,6 @@
 # keyhunt-Win
 
-keyhunt-Win for windows
+Keyhunt-Win
 ETH/BTC Private keys hunter
 Work for Bitcoin
 Address/rmd160 hashes/PubKeys(Compressed/Uncompressed)
@@ -14,28 +14,20 @@ address
 To clone the repository:
 
 ```
-git clone https://github.com/CryptoXploit/Keyhunt-win/keyhunt.git
+git clone https://github.com/CryptoXploit/Keyhunt-Win.git
+```
+To Download the zip version
+```
+https://github.com/CryptoXploit/Keyhunt-Win/archive/refs/heads/main.zip
+```
+don't forget change to the Keyhunt-Win directory
+
+`cd Keyhunt-Win`
+
+Execute with `-h` to see the help
 
 ```
-To download the zip version:
-
-
-don't forget change to the keyhunt-win directory
-
-`cd keyhunt-win`
-
-# How to build
-
-First compile:
-
-```
-make
-```
-
-and then execute with `-h` to see the help
-
-```
-./keyhunt -h
+keyhunt-win.exe -h
 ```
 
 
@@ -45,18 +37,16 @@ This version is still a **beta** version, there are a lot of things that can be 
 
 # Modes
 
-Keyhunt can work in diferent ways at different speeds.
+Keyhunt-Win can work in diferent ways at different speeds.
 
-The current availables modes are:
-- address
-- rmd160
-- xpoint
-- bsgs
-
-## Experimental modes
-
-- minikeys
-- pub2rmd
+Keyhunt Modes-
+1.Address+vanity
+2.rmd160
+3.xpoint
+4.pub2rmd
+5.BSGS
+6.Minikey
+7.Ethereum
 
 ## address mode
 
@@ -101,7 +91,7 @@ Example of address from solved puzzles, this file is already on the repository `
 
 To target that file we need to execute keyhunt with this line
 
-`./keyhunt -m address -f tests/1to32.txt -r 1:FFFFFFFF`
+`keyhunt-win.exe -m address -f tests/1to32.txt -r 1:FFFFFFFF`
 
 output:
 ```
@@ -136,7 +126,7 @@ In this mode you can specify to seach only address compressed or uncompressed wi
 Test your luck with the random parameter `-R` againts the puzzle #64
 
 ```
-./keyhunt -m address -f tests/64.txt -b 64 -l compress -R -q -s 10
+keyhunt-win.exe -m address -f tests/64.txt -b 64 -l compress -R -q -s 10
 ```
 
 Please note the change from `-r 1:FFFFFFFF` to `-b 64`, with -b you can specify the bit range
@@ -261,7 +251,7 @@ To search only one vanity address is with  `-v 1Hunter1` where `1Good1` is the v
 
 full command
 ```
-./keyhunt -m address -f tests/unsolvedpuzzles.txt -l compress -R -b 256 -v 1Good
+keyhunt-win.exe -m address -f tests/unsolvedpuzzles.txt -l compress -R -b 256 -v 1Good
 ```
 
 output:
@@ -295,7 +285,7 @@ publickey:
 command to search multiple vanity address from a file `-V filename.txt` please note that it is  `-V` Capital V for read a file.
 
 ```
-./keyhunt -m address -f tests/unsolvedpuzzles.txt -l compress -R -b 256 -V tests/vanitytargets.txt
+.keyhunt-win.exe -m address -f tests/unsolvedpuzzles.txt -l compress -R -b 256 -V tests/vanitytargets.txt
 ```
 
 Output:
@@ -368,7 +358,7 @@ d805f6f251f7479ebd853b3d0f4b9b2656d92f1d
 to target that file you need to execute the next line:
 
 ```
-./keyhunt -m rmd160 -f tests/1to32.rmd -r 1:FFFFFFFF -l compress
+keyhunt-win.exe -m rmd160 -f tests/1to32.rmd -r 1:FFFFFFFF -l compress
 ```
 
 output:
@@ -401,7 +391,7 @@ test your luck with the next file for th puzzle #64
 
 
 ```
-./keyhunt -m rmd160 -f tests/64.rmd -b 64 -l compress -R -q
+keyhunt-win.exe -m rmd160 -f tests/64.rmd -b 64 -l compress -R -q
 ```
 
 Output:
@@ -453,7 +443,7 @@ A few substracted values from puzzle *40*
 
 Now you can use keyhunt against some thousand values of the puzzle 40:
 
-```./keyhunt -m xpoint -f tests/substracted40.txt -n 65536 -t 4 -b 40```
+```keyhunt-win.exe -m xpoint -f tests/substracted40.txt -n 65536 -t 4 -b 40```
 
 Output:
 
@@ -486,7 +476,7 @@ This is an easy example, I been trying the puzzle 120 with more than 500 million
 
 Test you luck with the puzzle 120 with xpoint:
 
-```./keyhunt -m xpoint -f tests/120.txt -t 4 -b 120 -R -q```
+```keyhunt-win.exe -m xpoint -f tests/120.txt -t 4 -b 120 -R -q```
 
 Output:
 
@@ -545,7 +535,7 @@ c01bf430a97cbcdaedddba87ef4ea21c456cebdb
 
 To target that file you need to do:
 
-```./keyhunt -m pub2rmd -f tests/puzzleswopublickey.txt -t 6 -q```
+```keyhunt-win.exe -m pub2rmd -f tests/puzzleswopublickey.txt -t 6 -q```
 
 Output:
 
@@ -602,7 +592,7 @@ The files are created if they don't exist when you run the program the first tim
 example of file creation:
 
 ```
-./keyhunt -m bsgs -f tests/120.txt -R -b 120 -q -S
+keyhunt-win.exe -m bsgs -f tests/120.txt -R -b 120 -q -S
 [+] Version 0.2.211007 Chocolate ¡Beta!
 [+] Random mode
 [+] Quiet thread output
@@ -628,7 +618,7 @@ example of file creation:
 when we run the program for second time the files are now readed and the bP Points processing is omited:
 
 ```
-./keyhunt -m bsgs -f tests/120.txt -b 120 -q -S
+keyhunt-win.exe -m bsgs -f tests/120.txt -b 120 -q -S
 [+] Version 0.2.211007 Chocolate ¡Beta!
 [+] Quiet thread output
 [+] Turn off stats output
@@ -655,7 +645,7 @@ All the next examples were made with the `-S` option I just ommit that part of t
 To try to find those privatekey this is the line of execution:
 
 ```
-time ./keyhunt -m bsgs -f tests/test120.txt -b 120 -S
+time keyhunt-win.exe -m bsgs -f tests/test120.txt -b 120 -S
 ```
 
 Output:
@@ -695,9 +685,9 @@ Test the puzzle 120 with the next publickey:
 
 Line of execution in random mode `-R` or -B random
 
-```./keyhunt -m bsgs -f tests/120.txt -b 120 -q -s 10 -R```
+```keyhunt-win.exe -m bsgs -f tests/120.txt -b 120 -q -s 10 -R```
 
-```./keyhunt -m bsgs -f tests/120.txt -b 120 -q -s 10 -B random```
+```keyhunt-win.exe -m bsgs -f tests/120.txt -b 120 -q -s 10 -B random```
 
 
 Example Output:
@@ -729,7 +719,7 @@ We can speed up our process selecting a bigger K value `-k value` btw the n valu
 
 Example:
 ```
-./keyhunt -m bsgs -f tests/120.txt -b 120 -R -k 20
+keyhunt-win.exe -m bsgs -f tests/120.txt -b 120 -R -k 20
 ```
 
 Output:
@@ -760,7 +750,7 @@ if you want to more Speed use a bigger -k value like 128, it will use some 2.5 G
 
 
 ```
-./keyhunt -m bsgs -f tests/120.txt -b 120 -R -k 128
+keyhunt-win.exe -m bsgs -f tests/120.txt -b 120 -R -k 128
 ```
 
 Output
@@ -790,7 +780,7 @@ I already tested it with some **18 GB ** used with `-k 1024` and I get **~46 Pet
 
 with **6** threads
 
-`./keyhunt -m bsgs -f tests/120.txt -b 120 -R -k 1024 -q -t 6`
+`keyhunt-win.exe -m bsgs -f tests/120.txt -b 120 -R -k 1024 -q -t 6`
 
 Output:
 
@@ -869,7 +859,7 @@ Hidding the speed:
 command:
 
 ```
-time ./keyhunt -m bsgs -t 6 -f tests/in.txt -r 49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5e0000000000000000:49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5effffffffffffffff -n 0x1000000000000000 -M -s 0
+time keyhunt-win.exe -m bsgs -t 6 -f tests/in.txt -r 49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5e0000000000000000:49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5effffffffffffffff -n 0x1000000000000000 -M -s 0
 ```
 
 Output:
@@ -1048,7 +1038,7 @@ Publickey:
 
 Command
 ```
-time ./keyhunt -m bsgs -t 6 -f tests/63.pub -n 0x1000000000000000 -M -s 0 -S -k 4 -b 63
+time keyhunt-win.exe -m bsgs -t 6 -f tests/63.pub -n 0x1000000000000000 -M -s 0 -S -k 4 -b 63
 ```
 
 output:
@@ -1091,7 +1081,7 @@ Please note that number of threads was setting to 6 but only 4 threads were used
 The next command also solve the Puzzle 63 with more threads
 
 ```
-time ./keyhunt -m bsgs -t 6 -f tests/63.pub -n 0x400000000000000 -M -s 0 -S -k 8 -b 63
+time keyhunt-win.exe -m bsgs -t 6 -f tests/63.pub -n 0x400000000000000 -M -s 0 -S -k 8 -b 63
 ```
 
 ```
@@ -1133,7 +1123,7 @@ Publickey : 02ee0cf78d13b4aae9c8777a0f93dff7f5be3855bd2c0f85370f861c69bb5b533a
 Select one publickey that fit to your current speed save it in a file `testpublickey.txt` and test it with:
 
 ```
-./keyhunt -m bsgs -f testpublickey.txt -b 120 -q
+keyhunt-win.exe -m bsgs -f testpublickey.txt -b 120 -q
 ```
 
 Change the values of k, n and t
@@ -1156,7 +1146,7 @@ The minikey are generated from a 16 byte buffer using the base58 encode funtion 
 Command example:
 
 ```
-./keyhunt -m minikeys -f tests/minikeys.txt -C SG64GZqySYwBm9KxE1wJ28 -n 0x10000
+keyhunt-win.exe -m minikeys -f tests/minikeys.txt -C SG64GZqySYwBm9KxE1wJ28 -n 0x10000
 ```
 
 Output:
@@ -1183,7 +1173,7 @@ address: 15azScMmHvFPAQfQafrKr48E9MqRRXSnVv
 random minikeys command
 
 ```
-./keyhunt -m minikeys -f tests/minikeys.txt -q -R -n 0x1000
+keyhunt-win.exe -m minikeys -f tests/minikeys.txt -q -R -n 0x1000
 ```
 
 ```
@@ -1214,7 +1204,7 @@ to test the functionality of ethereum you can use the sample file `tests/1to32.e
 command: 
 
 ```
-./keyhunt -c eth -f tests/1to20.eth -r 1:100000000 -M
+keyhunt-win.exe -c eth -f tests/1to20.eth -r 1:100000000 -M
 ```
 
 output:
@@ -1261,17 +1251,6 @@ Please check the video that i made to answer that https://youtu.be/MVby8mYNxbI
 
 - Is available for Windows?
 R: It can be compiled with mingw, also it can be executed in the Ubuntu shell for windows 10
-
-Updated: 
-Yes thanks to @kanhavishva
-Available in: https://github.com/kanhavishva/keyhunt
-
-Also, thanks to @WanderingPhilosopher
-Available in: https://github.com/WanderingPhilosopher/keyhunt
-
-Also thanks to @XopMC
-Available in: https://github.com/XopMC/keyhunt-win
-
 
 ## Dependencies
 - pthread
