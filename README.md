@@ -133,20 +133,8 @@ Please note the change from `-r 1:FFFFFFFF` to `-b 64`, with -b you can specify 
 
 output:
 ```
-[+] Version 0.2.211007 Chocolate ¡Beta!
-[+] Mode address
-[+] Search compress only
-[+] Random mode
-[+] Quiet thread output
-[+] Stats output every 10 seconds
-[+] Opening file tests/64.txt
-[+] Setting search for btc adddress
-[+] Allocating memory for 1 elements: 0.00 MB
-[+] Bloom filter for 1 elements.
-[+] Loading data to the bloomfilter total: 0.00 MB
-[+] Bloomfilter completed
-[+] Sorting data ... done! 1 values were loaded and sorted
-[+] Total 6291456 keys in 20 seconds: 314572 keys/s
+![capture83](https://user-images.githubusercontent.com/80972170/159678485-83c8e905-3a0d-4e07-9951-49da8477ca7c.jpg)
+
 ```
 
 ### vanity search.
