@@ -581,27 +581,9 @@ example of file creation:
 
 ```
 keyhunt-win.exe -m bsgs -f tests/120.txt -R -b 120 -q -S
-[+] Version 0.2.211007 Chocolate ¡Beta!
-[+] Random mode
-[+] Quiet thread output
-[+] Mode BSGS random
-[+] Opening file tests/120.txt
-[+] Added 1 points from file
-[+] Bit Range 120
-[+] -- from : 0x800000000000000000000000000000
-[+] -- to   : 0x1000000000000000000000000000000
-[+] N = 0x100000000000
-[+] Bloom filter for 4194304 elements : 14.00 MB
-[+] Bloom filter for 209716 elements : 0.72 MB
-[+] Allocating 3.00 MB for 209716 bP Points
-[+] processing 4194304/4194304 bP points : 100%
-[+] Sorting 209716 elements... Done!
-[+] Writing bloom filter to file keyhunt_bsgs_0_4194304.blm .. Done!
-[+] Writing bloom filter to file keyhunt_bsgs_1_209716.blm .. Done!
-[+] Writing bP Table to file keyhunt_bsgs_2_209716.tbl .. Done!
-[+] Total 439804651110400 keys in 30 seconds: ~14 Tkeys/s (14660155037013 keys/s)
-[+] Total 897201488265216 keys in 60 seconds: ~14 Tkeys/s (14953358137753 keys/s)
 ```
+![capture84](https://user-images.githubusercontent.com/80972170/159680015-779380f7-189c-4e7a-a584-0a55f56aba7d.jpg)
+
 
 when we run the program for second time the files are now readed and the bP Points processing is omited:
 
