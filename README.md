@@ -133,7 +133,7 @@ Please note the change from `-r 1:FFFFFFFF` to `-b 64`, with -b you can specify 
 
 output:
 ```
-![capture83](https://user-images.githubusercontent.com/80972170/159678485-83c8e905-3a0d-4e07-9951-49da8477ca7c.jpg)
+![plot](https://user-images.githubusercontent.com/80972170/159678485-83c8e905-3a0d-4e07-9951-49da8477ca7c.jpg)
 
 ```
 
