@@ -693,26 +693,10 @@ keyhunt-win.exe -m bsgs -f tests/120.txt -b 120 -R -k 20
 ```
 
 Output:
+![capture89](https://user-images.githubusercontent.com/80972170/159681958-14d8cb56-0fb5-4ed6-a9a8-3181393adb03.jpg)
 
-```
-[+] Version 0.2.211007 Chocolate ¡Beta!
-[+] Random mode
-[+] K factor 20
-[+] Mode BSGS random
-[+] Opening file tests/120.txt
-[+] Added 1 points from file
-[+] Bit Range 120
-[+] -- from : 0x800000000000000000000000000000
-[+] -- to   : 0x1000000000000000000000000000000
-[+] N = 0xfffff000000
-[+] Bloom filter for 83886080 elements : 287.00 MB
-[+] Bloom filter for 4194304 elements : 14.38 MB
-[+] Allocating 64.00 MB for 4194304 bP Points
-[+] processing 83886080/83886080 bP points : 100%
-^C] Thread 0xc769b6007dccced55c48c28db483f3  : ~252 Tkeys/s (252740831805440 keys/s)
-```
 
-**~252 Terakeys/s for one single thread**
+**~182 Terakeys/s for one single thread**
 
 Note the value of N `0xfffff000000` with k = 20 this mean that the N value is less than the default value `0x100000000000` that is because k is not a 2^X number
 
