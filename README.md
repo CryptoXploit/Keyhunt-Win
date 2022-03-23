@@ -132,10 +132,10 @@ keyhunt-win.exe -m address -f tests/64.txt -b 64 -l compress -R -q -s 10
 Please note the change from `-r 1:FFFFFFFF` to `-b 64`, with -b you can specify the bit range
 
 output:
-```
+
 ![plot](https://user-images.githubusercontent.com/80972170/159678485-83c8e905-3a0d-4e07-9951-49da8477ca7c.jpg)
 
-```
+
 
 ### vanity search.
 
