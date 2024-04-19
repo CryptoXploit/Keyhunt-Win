@@ -18,7 +18,7 @@ Work for Ethereum
 - Run against puzzle 66 (address mode)
 
 ```
-./keyhunt -m address -f tests/66.txt -b 66 -l compress -R -q -s 10
+keyhunt.exe -m address -f tests/66.txt -b 66 -l compress -R -q -s 10
 
 ```
 
@@ -27,7 +27,7 @@ You need to add `-t numberThreads` to get better speed
 - Run against Puzzle 125 (bsgs mode)
 
 ```
-./keyhunt -m bsgs -f tests/125.txt -b 125 -q -s 10 -R
+keyhunt.exe -m bsgs -f tests/125.txt -b 125 -q -s 10 -R
 ```
 
 You need to add `-t numberThreads` and `-k factor` to get better speed
@@ -107,7 +107,7 @@ make legacy
 and then execute with `-h` to see the help
 
 ```
-./keyhunt -h
+keyhunt.exe -h
 ```
 
 ## ¡Beta!
@@ -144,7 +144,7 @@ Example of address from solved puzzles, this file is already on the repository `
 
 To target that file we need to execute keyhunt with this line
 
-`./keyhunt -m address -f tests/1to32.txt -r 1:FFFFFFFF`
+`keyhunt.exe -m address -f tests/1to32.txt -r 1:FFFFFFFF`
 
 output:
 ```
@@ -182,7 +182,7 @@ In this mode you can specify to seach only address compressed or uncompressed wi
 Test your luck with the random parameter `-R` againts the puzzle #66
 
 ```
-./keyhunt -m address -f tests/66.txt -b 66 -l compress -R -q -s 10
+keyhunt.exe -m address -f tests/66.txt -b 66 -l compress -R -q -s 10
 ```
 
 Please note the change from `-r 1:FFFFFFFF` to `-b 66`, with -b you can specify the bit range
@@ -214,7 +214,7 @@ To search only one vanity address is with `1Good1` or with `1MyKey` use the next
 full command
 
 ```
-./keyhunt -m vanity -l compress -R -b 256 -v 1Good1 -v 1MyKey
+keyhunt.exe -m vanity -l compress -R -b 256 -v 1Good1 -v 1MyKey
 ```
 
 output:
@@ -243,7 +243,7 @@ rmd160 ad63f02cb68254ce12982e5e312bd51e8a239a84
 command to search multiple vanity addresses from a file `-f filename.txt`.
 
 ```
-./keyhunt -m vanity -f ~/main/keyhunt/vanitytargets.txt -l compress -R -b 256 -e -s 10 -q 
+keyhunt.exe -m vanity -f ~/main/keyhunt/vanitytargets.txt -l compress -R -b 256 -e -s 10 -q 
 ```
 
 Output:
@@ -287,7 +287,7 @@ example file `tests/1to32.rmd` :
 to target that file you need to execute the next line:
 
 ```
-./keyhunt -m rmd160 -f tests/1to32.rmd -r 1:FFFFFFFF -l compress -s 5
+keyhunt.exe -m rmd160 -f tests/1to32.rmd -r 1:FFFFFFFF -l compress -s 5
 ```
 
 output:
@@ -321,7 +321,7 @@ test your luck with the next file for the puzzle #66
 
 
 ```
-./keyhunt -m rmd160 -f tests/66.rmd -b 66 -l compress -R -q
+keyhunt.exe -m rmd160 -f tests/66.rmd -b 66 -l compress -R -q
 ```
 
 Output:
@@ -374,7 +374,7 @@ A few substracted values from puzzle *40*
 
 Now you can use keyhunt against some thousand values of the puzzle 40:
 
-```./keyhunt -m xpoint -f tests/substracted40.txt -n 65536 -t 4 -b 40```
+```keyhunt.exe -m xpoint -f tests/substracted40.txt -n 65536 -t 4 -b 40```
 
 Output:
 
@@ -409,7 +409,7 @@ This is an easy example, I been trying the puzzle 120 with more than 500 million
 
 Test you luck with the puzzle 120 with xpoint:
 
-```./keyhunt -m xpoint -f tests/120.txt -t 4 -b 125 -R -q```
+```keyhunt.exe -m xpoint -f tests/120.txt -t 4 -b 125 -R -q```
 
 Output:
 
@@ -553,7 +553,7 @@ c01bf430a97cbcdaedddba87ef4ea21c456cebdb
 
 To target that file you need to do:
 
-```./keyhunt -m pub2rmd -f tests/puzzleswopublickey.txt -t 6 -q```
+```keyhunt.exe -m pub2rmd -f tests/puzzleswopublickey.txt -t 6 -q```
 
 Output:
 
@@ -610,7 +610,7 @@ The files are created if they don't exist when you run the program the first tim
 example of file creation:
 
 ```
-./keyhunt -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
+keyhunt.exe -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
 [+] Random mode
 [+] Quiet thread output
@@ -639,7 +639,7 @@ example of file creation:
 When we run the program for second time the files are now readed and the bP Points processing is omitted:
 
 ```
-./keyhunt -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
+keyhunt.exe -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
 [+] Random mode
 [+] Quiet thread output
@@ -669,13 +669,13 @@ All the next examples were made with the `-S` option I just ommit that part of t
 To try to find those privatekey this is the line of execution:
 
 ```
-time ./keyhunt -m bsgs -f tests/test120.txt -b 120 -S
+time keyhunt.exe -m bsgs -f tests/test120.txt -b 120 -S
 ```
 
 Output:
 
 ```
-time ./keyhunt -m bsgs -f tests/test120.txt -b 120 -S
+time keyhunt.exe -m bsgs -f tests/test120.txt -b 120 -S
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
 [+] Mode BSGS secuential
 [+] Opening file tests/test120.txt
@@ -711,9 +711,9 @@ Test the puzzle 120 with the next publickey:
 
 Line of execution in random mode `-R` or -B random
 
-```./keyhunt -m bsgs -f tests/125.txt -b 125 -q -s 10 -R```
+```keyhunt.exe -m bsgs -f tests/125.txt -b 125 -q -s 10 -R```
 
-```./keyhunt -m bsgs -f tests/125.txt -b 125 -q -s 10 -B random```
+```keyhunt.exe -m bsgs -f tests/125.txt -b 125 -q -s 10 -B random```
 
 
 Example Output:
@@ -748,13 +748,13 @@ We can speed up our process selecting a bigger K value `-k value` btw the n valu
 
 Example:
 ```
-./keyhunt -m bsgs -f tests/125.txt -b 125 -R -k 20 -S
+keyhunt.exe -m bsgs -f tests/125.txt -b 125 -R -k 20 -S
 ```
 
 Output:
 
 ```
-./keyhunt -m bsgs -f tests/125.txt -b 125 -R -k 20 -S
+keyhunt.exe -m bsgs -f tests/125.txt -b 125 -R -k 20 -S
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
 [+] Random mode
 [+] K factor 20
@@ -787,7 +787,7 @@ if you want to more Speed use a bigger -k value like 128, it will use some 2 GB 
 
 
 ```
-./keyhunt -m bsgs -f tests/125.txt -b 125 -R -k 128 -S
+keyhunt.exe -m bsgs -f tests/125.txt -b 125 -R -k 128 -S
 ```
 
 Output
@@ -822,7 +822,7 @@ I already tested it with some **8 GB ** used with `-k 512` and I get **~46 Petak
 
 with **8** threads
 
-`./keyhunt -m bsgs -f tests/125.txt -b 125 -R -k 512 -q -t 8 -s 10 -S`
+`keyhunt.exe -m bsgs -f tests/125.txt -b 125 -R -k 512 -q -t 8 -s 10 -S`
 
 Output:
 
@@ -906,7 +906,7 @@ Hidding the speed:
 command:
 
 ```
-time ./keyhunt -m bsgs -t 6 -f tests/in.txt -r 49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5e0000000000000000:49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5effffffffffffffff -n 0x1000000000000000 -M -s 0
+time keyhunt.exe -m bsgs -t 6 -f tests/in.txt -r 49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5e0000000000000000:49dccfd96dc5df56487436f5a1b18c4f5d34f65ddb48cb5effffffffffffffff -n 0x1000000000000000 -M -s 0
 ```
 
 Output:
@@ -1085,7 +1085,7 @@ Publickey:
 
 Command
 ```
-time ./keyhunt -m bsgs -t 8 -f tests/63.pub -k 512 -s 0 -S -b 63
+time keyhunt.exe -m bsgs -t 8 -f tests/63.pub -k 512 -s 0 -S -b 63
 ```
 
 output:
@@ -1153,7 +1153,7 @@ Publickey : 02ee0cf78d13b4aae9c8777a0f93dff7f5be3855bd2c0f85370f861c69bb5b533a
 Select one publickey that fit to your current speed save it in a file `testpublickey.txt` and test it with:
 
 ```
-./keyhunt -m bsgs -f testpublickey.txt -b 120 -q
+keyhunt.exe -m bsgs -f testpublickey.txt -b 120 -q
 ```
 
 Change the values of k, n and t
@@ -1178,7 +1178,7 @@ The input file can be an addresses or rmd hashes list of the target keys
 Command example:
 
 ```
-./keyhunt -m minikeys -f tests/minikeys.txt -C SG64GZqySYwBm9KxE1wJ28 -n 0x10000
+keyhunt.exe -m minikeys -f tests/minikeys.txt -C SG64GZqySYwBm9KxE1wJ28 -n 0x10000
 ```
 
 Output:
@@ -1203,7 +1203,7 @@ address: 15azScMmHvFPAQfQafrKr48E9MqRRXSnVv
 random minikeys command
 
 ```
-./keyhunt -m minikeys -f tests/minikeys.txt -n 0x10000 -q -R
+keyhunt.exe -m minikeys -f tests/minikeys.txt -n 0x10000 -q -R
 ```
 
 ```
@@ -1232,7 +1232,7 @@ to test the functionality of ethereum you can use the sample file `tests/1to32.e
 command: 
 
 ```
-./keyhunt -c eth -f tests/1to32.eth -r 1:100000000 -M
+keyhunt.exe -c eth -f tests/1to32.eth -r 1:100000000 -M
 ```
 
 output:
