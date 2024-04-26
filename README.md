@@ -1,4 +1,6 @@
-# keyhunt
+# keyhunt windows
+- use keyhunt.exe if you have newer system
+- use keyhunt-legacy.exe if you are facing stackdump/crash issues running keyhunt.exe
 
 Tool for hunt privatekeys for crypto currencies that use secp256k1 elliptic curve
 
@@ -27,7 +29,7 @@ You need to add `-t numberThreads` to get better speed
 - Run against Puzzle 125 (bsgs mode)
 
 ```
-keyhunt.exe -m bsgs -f tests/125.txt -b 125 -q -s 10 -R
+keyhunt.exe -m bsgs -f tests/130.txt -b 130 -q -s 10 -R
 ```
 
 You need to add `-t numberThreads` and `-k factor` to get better speed
@@ -52,59 +54,23 @@ But again i recommend only use this program for puzzles.
 
 Please read the CHANGELOG.md to see the new changes
 
-# Download and build
-
-This program was made in a linux environment.
-if you are windows user i strongly recommend to use WSL enviroment on Windows.
-it is available in the Microsoft store
-
-Please install on your system
-
-- git
-- build-essential
-
-for legacy version also you are going to need:
-
-- libssl-dev
-- libgmp-dev
-
-On Debian based systems, run this commands to update your current enviroment
-and install the tools needed to compile it
-
-```
-apt update && apt upgrade
-apt install git -y
-apt install build-essential -y
-apt install libssl-dev -y
-apt install libgmp-dev -y
-```
 
 To clone the repository
 
 ```
-git clone https://github.com/albertobsd/keyhunt.git
+https://github.com/CryptoXploit/Keyhunt.git
 ```
 
-don't forget change to the keyhunt directory (But i'm not here to teach you linux commands)
+don't forget change to the keyhunt directory
 
 ```
 cd keyhunt
 ```
 
-First compile:
+First run:
 
 ```
-make
-```
-
-if you have problems compiling the `main` version you can compile the `legacy` version
-
-```
-make legacy
-```
-
-
-and then execute with `-h` to see the help
+execute with `-h` to see the help
 
 ```
 keyhunt.exe -h
@@ -409,7 +375,7 @@ This is an easy example, I been trying the puzzle 120 with more than 500 million
 
 Test you luck with the puzzle 120 with xpoint:
 
-```keyhunt.exe -m xpoint -f tests/120.txt -t 4 -b 125 -R -q```
+```keyhunt.exe -m xpoint -f tests/130.txt -t 4 -b 130 -R -q```
 
 Output:
 
@@ -610,7 +576,7 @@ The files are created if they don't exist when you run the program the first tim
 example of file creation:
 
 ```
-keyhunt.exe -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
+keyhunt.exe -m bsgs -f tests/130.txt -R -b 130 -q -S -s 10
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
 [+] Random mode
 [+] Quiet thread output
@@ -639,7 +605,7 @@ keyhunt.exe -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
 When we run the program for second time the files are now readed and the bP Points processing is omitted:
 
 ```
-keyhunt.exe -m bsgs -f tests/125.txt -R -b 125 -q -S -s 10
+keyhunt.exe -m bsgs -f tests/130.txt -R -b 130 -q -S -s 10
 [+] Version 0.2.230430 Satoshi Quest, developed by AlbertoBSD
 [+] Random mode
 [+] Quiet thread output
@@ -669,7 +635,7 @@ All the next examples were made with the `-S` option I just ommit that part of t
 To try to find those privatekey this is the line of execution:
 
 ```
-time keyhunt.exe -m bsgs -f tests/test120.txt -b 120 -S
+time keyhunt.exe -m bsgs -f tests/test130.txt -b 130 -S
 ```
 
 Output:
@@ -711,9 +677,9 @@ Test the puzzle 120 with the next publickey:
 
 Line of execution in random mode `-R` or -B random
 
-```keyhunt.exe -m bsgs -f tests/125.txt -b 125 -q -s 10 -R```
+```keyhunt.exe -m bsgs -f tests/130.txt -b 130 -q -s 10 -R```
 
-```keyhunt.exe -m bsgs -f tests/125.txt -b 125 -q -s 10 -B random```
+```keyhunt.exe -m bsgs -f tests/130.txt -b 130 -q -s 10 -B random```
 
 
 Example Output:
@@ -748,7 +714,7 @@ We can speed up our process selecting a bigger K value `-k value` btw the n valu
 
 Example:
 ```
-keyhunt.exe -m bsgs -f tests/125.txt -b 125 -R -k 20 -S
+keyhunt.exe -m bsgs -f tests/130.txt -b 130 -R -k 20 -S
 ```
 
 Output:
@@ -787,7 +753,7 @@ if you want to more Speed use a bigger -k value like 128, it will use some 2 GB 
 
 
 ```
-keyhunt.exe -m bsgs -f tests/125.txt -b 125 -R -k 128 -S
+keyhunt.exe -m bsgs -f tests/130.txt -b 130 -R -k 128 -S
 ```
 
 Output
@@ -822,7 +788,7 @@ I already tested it with some **8 GB ** used with `-k 512` and I get **~46 Petak
 
 with **8** threads
 
-`keyhunt.exe -m bsgs -f tests/125.txt -b 125 -R -k 512 -q -t 8 -s 10 -S`
+`keyhunt.exe -m bsgs -f tests/130.txt -b 130 -R -k 512 -q -t 8 -s 10 -S`
 
 Output:
 
